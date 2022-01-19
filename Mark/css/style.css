@@ -1,0 +1,253 @@
+:root {
+  --vh: 1vh;
+  --vw: 1vw;
+  --app-bg-color: #fff;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #e5e5e5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  position: relative;
+  width: calc(var(--vh, 1vh)*67 - 1px);
+  height: calc(var(--vh, 1vh)*100);
+}
+
+.app {
+  max-width: calc(var(--vh, 1vh) * 80);
+  height: 100%;
+  background-color: var(--app-bg-color);
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.app * {
+  will-change: opacity, visibility, transform, top, left, right, bottom, width, height;
+}
+
+.app img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.cover,
+.section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--app-bg-color);
+}
+
+.section.padding-top {
+  padding-top: 160%;
+}
+
+.cover {
+  height: 100%;
+}
+
+.bg-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.content-wrapper {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.content-wrapper.center {
+  left: 0;
+  top: 50%;
+  right: 0;
+  bottom: auto;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+}
+
+.content-wrapper.bottom {
+  bottom: 0;
+  top: auto;
+}
+
+.cover .bg-wrapper .bg {
+  position: relative;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.section .bg-wrapper .bg {
+  position: relative;
+  width: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.app .content {
+  position: relative;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.app .content:not(:first-child) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.media-video > video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+
+.media-video > canvas {
+  display: block;
+  width: auto;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.media-video .video_poster {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.media-video.active .video_poster {
+  display: none;
+}
+
+.content-wrapper .slider,
+.bg-wrapper .slider {
+  pointer-events: auto;
+}
+
+.slider .swiper-container {
+  width: 100%;
+}
+
+.slider img {
+  display: block;
+  width: 100%;
+}
+
+.slider .next,
+.slider .prev {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  display: block;
+  width: 12%;
+  height: 12%;
+  background: 50% 50% no-repeat;
+  background-size: 20% 20%;
+  z-index: 3;
+}
+
+.slider .next.swiper-button-disabled,
+.slider .prev.swiper-button-disabled {
+  opacity: .3;
+}
+
+.slider .next {
+  background-image: url(../assets/common/next.svg);
+  right: 0;
+}
+
+.slider .prev {
+  background-image: url(../assets/common/prev.svg);
+  left: 0;
+}
+
+.slider .pagination {
+  position: absolute;
+  left: 50%;
+  bottom: 4.92%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 2;
+  gap: 1.37%;
+}
+
+.slider .pagination .swiper-pagination-bullet {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  margin: 0;
+  background-color: #000;
+  opacity: .3;
+}
+
+.slider .pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.slider.dark .next {
+  background-image: url(../assets/common/next-w.svg);
+}
+
+.slider.dark .prev {
+  background-image: url(../assets/common/prev-w.svg);
+}
+
+.slider.dark .pagination .swiper-pagination-bullet {
+  background-color: #fff;
+}
+/*# sourceMappingURL=style.css.map */

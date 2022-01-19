@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1,maximum-scale=1,user-scalable=yes,viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title> Sample-1 | CMS-Showcase </title>
+
+
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script>
+        let vw;
+        let vh;
+        function revh() {
+            vw = window.innerWidth * 0.01;
+            vh = window.innerHeight * 0.01;
+            
+            document.querySelector(":root").style.setProperty("--vh", `${vh}px`);
+            document.querySelector(":root").style.setProperty("--vw", `${vw}px`);
+        }
+        revh()
+        let isMobile = false;
+        var mobileInfo = new Array('Android', 'iPhone', 'iPod', 'BlackBerry', 'Windows CE', 'SAMSUNG', 'LG', 'MOT', 'SonyEricsson','windows phone os 7');
+        for (var info in mobileInfo){
+            if (navigator.userAgent.match(mobileInfo[info]) != null){
+                isMobile = true;
+                break;
+            }
+        }
+        if(!isMobile) window.addEventListener('resize', revh)
+    </script>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="app" id="app">
+            
+            <!-- 커버 -->
+            <section class="cover">
+                <div class="bg-wrapper" data-parallaxbg="true">
+                    <img class="bg" src="./assets/img/cover.jpg" alt="" >
+                </div>
+                <div class="content-wrapper">
+                    <div class="content" style="background-image: url('./assets/img/cover_brand.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/cover_title.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/cover_num.png');"></div>
+                </div>
+            </section>
+
+            <!-- 섹션 1 -->
+            <section class="section" data-bgcolor="">
+                <div class="bg-wrapper" data-parallaxbg="" data-motion="" data-direction="">
+                    <img class="bg" src="./assets/img/s_01-bg.jpg" alt="" >
+                </div>
+                <div class="content-wrapper" data-speed="" data-motion="true" data-direction="up">
+                    <div class="content" style="background-image: url('./assets/img/s_01-img_01.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_01-img_02.png');"></div>
+                </div>
+                <div class="content-wrapper"  data-speed="fast" data-motion="" data-direction="">
+                    <div class="content" style="background-image: url('./assets/img/s_01-img_03.png');"></div>
+                </div>
+            </section>
+
+            <!-- 섹선 2 :: 배경 모션 up -->
+            <section class="section" data-bgcolor="#fff">
+                <div class="bg-wrapper" data-parallaxbg="" data-motion="true" data-direction="up">
+                    <img class="bg" src="./assets/img/s_02-bg.jpg" alt="" >
+                </div>
+                <div class="content-wrapper" data-speed="fast" data-motion="" data-direction="">
+                    <div class="content" style="background-image: url('./assets/img/s_02-img_01.png');"></div>
+                </div>
+                <div class="content-wrapper" data-speed="" data-motion="true" data-direction="up">
+                    <div class="content" style="background-image: url('./assets/img/s_02-img_02.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_02-img_03.png');"></div>
+                </div>
+            </section>
+
+            <!-- 섹션 3 동영상 배경 -->
+            <section class="section" data-bgcolor="">
+                <div class="bg-wrapper" data-parallaxbg="" data-motion="" data-direction="">
+                    <video class="bg" src="./assets/mp4/s_03-bg.mp4" autoplay playsinline loop muted ></video>
+                </div>
+                
+                <div class="content-wrapper" data-speed="" data-motion="true" data-direction="up">
+                    <div class="content" style="background-image: url('./assets/img/s_03-img_01.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_03-img_02.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_03-img_03.png');"></div>
+                </div>
+            </section>
+
+            <!-- 섹션 4 -->
+            <section class="section" data-bgcolor="">
+                <div class="bg-wrapper" data-parallaxbg="" data-motion="" data-direction="">
+                    <img class="bg" src="./assets/img/s_04-bg.jpg" alt="">
+                </div>
+
+                <div class="content-wrapper" data-speed="" data-motion="true" data-direction="up">
+                    <div class="content" style="background-image: url('./assets/img/s_04-img_01.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_04-img_02.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_04-img_03.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_04-img_04.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_04-img_05.png');"></div>
+                </div>
+            </section>
+
+            <!-- 섹션 5 : 패럴렉스 BG -->
+            <section class="section" data-bgcolor="">
+                <div class="bg-wrapper" data-parallaxbg="true" data-motion="" data-direction="">
+                    <img class="bg" src="./assets/img/s_05-bg.jpg" alt="" >
+                </div>
+
+                <div class="content-wrapper" data-speed="" data-motion="true" data-direction="none">
+                    <div class="content" style="background-image: url('./assets/img/s_05-img_01.png');"></div>
+                </div>
+
+                <div class="content-wrapper" data-speed="" data-motion="true" data-direction="up">
+                    <div class="content" style="background-image: url('./assets/img/s_05-img_02.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_05-img_03.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_05-img_04.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_05-img_05.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_05-img_06.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_05-img_07.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_05-img_08.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_05-img_09.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_05-img_10.png');"></div>
+                </div>
+            </section>
+
+            <!-- 섹션 6 : 흰색바탕화면 -->
+            <section class="section" data-bgcolor="">
+                <div class="bg-wrapper" data-parallaxbg="" data-motion="" data-direction="">
+                    <img class="bg" src="./assets/img/s_06-bg.jpg" alt="">
+                </div>
+
+                <div class="content-wrapper" data-speed="" data-motion="true" data-direction="none">
+                    <div class="content" style="background-image: url('./assets/img/s_06-img_01.png')"></div>
+                </div>
+
+                <div class="content-wrapper" data-speed="" data-motion="true" data-direction="up">    
+                    <div class="content" style="background-image: url('./assets/img/s_06-img_02.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_06-img_03.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_06-img_04.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_06-img_05.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_06-img_06.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_06-img_07.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_06-img_08.png');"></div>
+                </div>
+            </section>
+
+            <!-- 섹션 7 : 동영상 -->
+            <section class="section" data-bgcolor="">
+                <div class="bg-wrapper" data-parallaxbg="" data-motion="" data-direction="">
+                    <img src="./assets/img/s_07-bg.jpg" alt="" class="section_bg_element">
+                </div>
+
+                <div class="content-wrapper" data-motion="" data-direction="">
+                    <video class="content" src="./assets/mp4/s_07-video.mp4" autoplay muted playsinline loop></video>
+                </div>
+            </section>
+
+            <!-- 섹션 8: 배경없는 타입 & swiper : 자동재생 -->
+            <section class="section" data-bgcolor="#fff">
+
+                <div class="content-wrapper" data-speed="" data-motion="" data-direction="">
+                    <div class="slider" data-autoplay="true">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="./assets/img/s_08-swiper_01.jpg"></div>
+                                <div class="swiper-slide"><img src="./assets/img/s_08-swiper_02.jpg"></div>
+                                <div class="swiper-slide"><img src="./assets/img/s_08-swiper_03.jpg"></div>
+                            </div>
+                            <div class="pagination"></div>
+                            <div class="prev"></div>
+                            <div class="next"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 섹션 9: swiper : 논자동재생 -->
+            <section class="section" data-bgcolor="">
+                <div class="bg-wrapper" data-parallaxbg="" data-motion="" data-direction="">
+                    <img class="bg" src="./assets/img/s_09-bg.jpg" alt="">
+                </div>
+
+                <div class="content-wrapper" data-speed="" data-motion="true" data-direction="none">
+                    <div class="bg" style="background-image: url('./assets/img/s_09-text_01.png');"></div>
+                </div>
+
+                <div class="content-wrapper" data-speed="" data-motion="" data-direction="">
+                    <div class="slider dark" data-autoplay="">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="./assets/img/s_09-swiper_01.png"></div>
+                                <div class="swiper-slide"><img src="./assets/img/s_09-swiper_02.png"></div>
+                                <div class="swiper-slide"><img src="./assets/img/s_09-swiper_03.png"></div>
+                            </div>
+                            <div class="pagination"></div>
+                            <div class="prev"></div>
+                            <div class="next"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 섹션 10: 배경만 존재 -->
+            <section class="section" data-bgcolor="">
+                <div class="bg-wrapper" data-parallaxbg="" data-motion="true" data-direction="up">
+                    <img class="bg" src="./assets/img/s_10-bg.jpg" alt="">
+                </div>
+            </section>
+
+            <!-- 섹션 11: 컨텐츠 이미지 두개 배치 -->
+            <section class="section" data-bgcolor="#fff">
+                <div class="bg-wrapper" data-parallaxbg="" data-motion="true" data-direction="up">
+                    <img class="bg" src="./assets/img/s_11-bg.jpg" alt="">
+                </div>
+
+                <div class="content-wrapper" data-speed="" data-motion="true" data-direction="up">
+                    <div class="content" style="background-image: url('./assets/img/s_11-img_01.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_11-img_02.png');"></div>
+                </div>
+            </section>
+
+            <!-- 섹션 12: 텍스트 설명 1-->
+            <section class="section" data-bgcolor="">
+                <div class="bg-wrapper" data-parallaxbg="" data-motion="" data-direction="">
+                    <img class="bg" src="./assets/img/s_12-bg.jpg" alt="">
+                </div>
+
+                <div class="content-wrapper" data-speed="" data-motion="true" data-direction="left">
+                    <div class="content" style="background-image: url('./assets/img/s_12-img_01.png');"></div>
+                </div>
+                <div class="content-wrapper" data-speed="" data-motion="true" data-direction="up">
+                    <div class="content" style="background-image: url('./assets/img/s_12-img_02.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_12-img_03.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_12-img_04.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_12-img_05.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_12-img_06.png');"></div>
+                </div>
+            </section>
+
+            <!-- 섹션 13: 텍스트 설명 2 -->
+            <section class="section" data-bgcolor="">
+                <div class="bg-wrapper" data-parallaxbg="" data-motion="" data-direction="">
+                    <img class="bg" src="./assets/img/s_12-bg.jpg" alt="">
+                </div>
+
+                <div class="content-wrapper" data-speed="" data-motion="true" data-direction="left">
+                    <div class="content" style="background-image: url('./assets/img/s_13-img_01.png');"></div>
+                </div>
+                <div class="content-wrapper" data-speed="" data-motion="true" data-direction="up">
+                    <div class="content" style="background-image: url('./assets/img/s_13-img_02.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_13-img_03.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_13-img_04.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/s_13-img_05.png');"></div>
+                </div>
+            </section>
+
+            <!-- 섹션 14: 배경없는 타입 & swiper & swiper 위에 고정 텍스트  -->
+            <section class="section" data-bgcolor="">
+
+                <div class="content-wrapper" data-speed="" data-motion="" data-direction="">
+                    <div class="slider dark" data-autoplay="true">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="./assets/img/s_14-swiper_01.jpg"></div>
+                                <div class="swiper-slide"><img src="./assets/img/s_14-swiper_02.jpg"></div>
+                                <div class="swiper-slide"><img src="./assets/img/s_14-swiper_03.jpg"></div>
+                                <div class="swiper-slide"><img src="./assets/img/s_14-swiper_04.jpg"></div>
+                            </div>
+                            <div class="pagination"></div>
+                            <div class="prev"></div>
+                            <div class="next"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-wrapper" data-speed="" data-motion="" data-direction="">
+                    <div class="content" style="background-image: url('./assets/img/s_14-img_01.png');"></div>
+                </div>
+            </section>
+
+            <!-- 이벤트  -->
+            <section class="section" data-bgcolor="">
+
+                <div class="bg-wrapper" data-speed="" data-motion="" data-direction="">
+                    <img class="bg" src="./assets/img/event-bg.jpg" alt="">
+                </div>
+
+                <div class="content-wrapper" data-speed="" data-motion="true" data-direction="up">
+                    <div class="content" style="background-image: url('./assets/img/event-img_01.png');"></div>
+                    <div class="content" style="background-image: url('./assets/img/event-img_02.png');"></div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+
+</body>
+</html>

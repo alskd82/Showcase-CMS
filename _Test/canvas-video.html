@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> canvas-video </title>
+    <style>
+        html, body{ width: 100%; height: 100%; }
+        body{ margin:0; padding: 0;}
+
+.canvas-video { 
+    position: relative; 
+    width: 50%; 
+    /* height: 100%;  */
+}
+.canvas-video > video {
+    position: relative; width: 100%; height: 100%;
+    opacity: 0;
+    object-fit: cover;
+    z-index: -1;
+}
+.canvas-video canvas {
+    display: block;
+    width: 100%; height: 100%;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+}
+    </style>
+</head>
+<body>
+
+<div class="canvas-video">
+    <canvas></canvas>
+    <video data-src="./main.mp4" playsinline muted loop autoplay></video>
+</div>
+
+
+    <script type="text/javascript">
+document.querySelectorAll('.canvas-video').forEach((e, i)=>{
+    canvasVideo(e)
+});
+
+function canvasVideo(elem){
+    const canvas = elem.querySelector('canvas');
+    const video = elem.querySelector('video');
+    video.src = video.getAttribute("data-src");
+    const ctx = canvas.getContext("2d");
+
+    video.addEventListener('loadeddata', e => {
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight; 
+        function drawCanvas() {
+            // if( !elem.classList.contains("active") ) return
+            ctx.drawImage(video, 0, 0, canvas.width , canvas.height );
+            window.requestAnimationFrame(drawCanvas);
+        };
+        // setInterval((function(){ drawCanvas() }), 1000/24);
+        // drawCanvas();
+        window.requestAnimationFrame(drawCanvas);
+    })
+};
+
+
+    </script>
+    
+</body>
+</html>
